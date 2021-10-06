@@ -2,4 +2,366 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+:root {
+    --primary-background: #141d2f;
+    --hover-mode: #90a4d4;
+    --dark-light: white;
+    --secondary-background: #1e2a47;
+    --passive-blue: #0079ff;
+    --active-blue: #60abff;
+    --text-blue: white;
+}
+
+.light-theme {
+    --primary-background: #f6f8ff;
+    --hover-mode: #222731;
+    --dark-light: #697c9a;
+    --paragraph-color: #2b3442;
+    --text-blue: #4b6a9b;
+
+    color: var(--text-blue);
+    #mode {
+        visibility: hidden;
+        content: 'dark';
+    }
+    #mode::after {
+        visibility: visible;
+        content: 'dark';
+    }
+
+    h1 {
+        color: var(--hover-mode);
+    }
+    .card {
+        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+        background-color: var(--primary-background);
+        .stats {
+            background-color: var(--primary-background);
+            section {
+                p {
+                    color: var(--paragraph-color);
+                }
+            }
+        }
+    }
+    .form {
+        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+        background-color: var(--primary-background);
+        input {
+            background-color: var(--primary-background);
+            &::placeholder {
+                color: var(--text-blue);
+            }
+        }
+    }
+    .card {
+        .socials {
+            color: var(--text-blue);
+        }
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-background);
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    p {
+        font-weight: 400;
+    }
+    header {
+        margin-top: 31px;
+        margin-bottom: 35px;
+        width: 327px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (min-width: 600px) {
+            width: 573px;
+            margin-top: 140px;
+            margin-bottom: 35px;
+        }
+        @media (min-width: 800px) {
+            width: 730px;
+            margin-top: 144px;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .mode {
+            border: none;
+            background-color: inherit;
+            cursor: pointer;
+            display: flex;
+            &:hover {
+                span {
+                    color: var(--hover-mode);
+                }
+                svg {
+                    path {
+                        fill: var(--hover-mode);
+                    }
+                }
+            }
+            span {
+                text-transform: uppercase;
+                font-size: 13px;
+                letter-spacing: 2.5px;
+                font-weight: bold;
+                color: var(--dark-light);
+            }
+            .sun {
+                display: inline-block;
+            }
+            .moon {
+                display: none;
+            }
+            svg {
+                margin-left: 16px;
+            }
+        }
+    }
+    main {
+        width: 327px;
+        @media (min-width: 600px) {
+            width: 573px;
+        }
+        @media (min-width: 800px) {
+            width: 730px;
+        }
+        .form {
+            position: relative;
+            margin-bottom: 16px;
+            height: 60px;
+            border-radius: 15px;
+            border: none;
+            background-color: var(--secondary-background);
+            @media (min-width: 600px) {
+                height: 69px;
+                margin-bottom: 24px;
+            }
+            #submit {
+                cursor: pointer;
+                position: absolute;
+                background-color: var(--passive-blue);
+                border: none;
+                color: white;
+                width: 84px;
+                height: 46px;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 14px;
+                right: 7px;
+                top: 6.5px;
+                &:hover {
+                    background-color: var(--active-blue);
+                }
+                @media (min-width: 600px) {
+                    top: 9.5px;
+                    width: 106px;
+                    height: 50px;
+                    font-size: 16px;
+                }
+            }
+            input {
+                cursor: pointer;
+                outline: none;
+                padding-left: 45px;
+                height: 100%;
+                width: 327px;
+                border-radius: 15px;
+                background-color: var(--secondary-background);
+                border: none;
+                font-size: 13px;
+                @media (min-width: 600px) {
+                    padding-left: 80px;
+                    width: 450px;
+                    font-size: 18px;
+                }
+                @media (min-width: 800px) {
+                    width: 590px;
+                }
+                &::placeholder {
+                    color: white;
+                    font-size: 13px;
+                    line-height: 25px;
+                    @media (min-width: 600px) {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+            }
+            img {
+                margin-top: 20px;
+                position: absolute;
+                margin-left: 16px;
+                height: 20px;
+                width: 20.05px;
+                @media (min-width: 600px) {
+                    margin-left: 32px;
+                    margin-top: 23px;
+                    height: 24px;
+                    width: 24.06px;
+                }
+            }
+        }
+        .card {
+            background-color: var(--secondary-background);
+            border-radius: 15px;
+            padding: 24px;
+            @media (min-width: 600px) {
+                padding: 40px;
+            }
+            @media (min-width: 800px) {
+                padding: 48px;
+                position: relative;
+            }
+            .profile {
+                margin-bottom: 33px;
+                display: flex;
+                align-items: center;
+                @media (min-width: 800px) {
+                    margin-bottom: 20px;
+                }
+                img {
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50px;
+                    @media (min-width: 600px) {
+                        width: 117px;
+                        height: 117px;
+                    }
+                    @media (min-width: 800px) {
+                        position: absolute;
+                        top: 48px;
+                        left: 48px;
+                    }
+                }
+                .profile-wrapper {
+                    margin-left: 19.5px;
+                    @media (min-width: 600px) {
+                        margin-left: 41px;
+                    }
+                    @media (min-width: 800px) {
+                        margin-left: 154px;
+                    }
+                    h1 {
+                        font-size: 16px;
+                        word-spacing: 1px;
+                        @media (min-width: 600px) {
+                            font-size: 26px;
+                        }
+                    }
+                    .user {
+                        color: var(--passive-blue);
+                        font-size: 13px;
+                        margin-bottom: 6px;
+                        @media (min-width: 600px) {
+                            font-size: 16px;
+                        }
+                    }
+                    .date {
+                        font-size: 13px;
+                        @media (min-width: 600px) {
+                            font-size: 15px;
+                            font-weight: 300;
+                        }
+                        @media (min-width: 800px) {
+                            position: absolute;
+                            top: 52px;
+                            left: 516px;
+                        }
+                    }
+                }
+            }
+            .bio {
+                margin-bottom: 23px;
+                @media (min-width: 800px) {
+                    margin-left: 154px;
+                    margin-bottom: 32px;
+                }
+                p {
+                    font-size: 13px;
+                    line-height: 25px;
+                    font-weight: 300;
+                    @media (min-width: 600px) {
+                        font-size: 15px;
+                    }
+                }
+            }
+            .stats {
+                margin-bottom: 24px;
+                text-align: center;
+                padding-left: 15px;
+                background-color: var(--primary-background);
+                height: 85px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                @media (min-width: 800px) {
+                    margin-left: 154px;
+                    margin-bottom: 37px;
+                }
+                h4 {
+                    font-weight: 400;
+                    margin-bottom: 8px;
+                    font-size: 11px;
+                }
+                p {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                @media (min-width: 600px) {
+                    justify-content: flex-start;
+                    padding-left: 32px;
+                    text-align: start;
+                    section {
+                        margin-right: 99px;
+                    }
+                    h4 {
+                        font-size: 13px;
+                    }
+                    p {
+                        font-size: 22px;
+                    }
+                }
+            }
+            .socials {
+                margin-bottom: 13px;
+                @media (min-width: 600px) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    margin-bottom: 0px;
+                }
+                @media (min-width: 800px) {
+                    margin-left: 154px;
+                }
+                section {
+                    display: flex;
+                    margin-bottom: 15px;
+                    img {
+                        width: 20px;
+                    }
+                    a {
+                        margin-left: 15px;
+                        text-decoration: none;
+                        color: var(--text-blue);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
