@@ -172,22 +172,19 @@ body {
                 }
             }
             input {
+                color: var(--dark-light);
                 cursor: pointer;
                 outline: none;
                 padding-left: 45px;
                 height: 100%;
-                width: 327px;
+                width: 100%;
                 border-radius: 15px;
                 background-color: var(--secondary-background);
                 border: none;
                 font-size: 13px;
                 @media (min-width: 600px) {
                     padding-left: 80px;
-                    width: 450px;
                     font-size: 18px;
-                }
-                @media (min-width: 800px) {
-                    width: 590px;
                 }
                 &::placeholder {
                     color: white;
@@ -234,7 +231,7 @@ body {
                 img {
                     height: 70px;
                     width: 70px;
-                    border-radius: 50px;
+                    border-radius: 50%;
                     @media (min-width: 600px) {
                         width: 117px;
                         height: 117px;
@@ -349,15 +346,22 @@ body {
                 section {
                     display: flex;
                     margin-bottom: 15px;
-                    img {
-                        width: 20px;
-                    }
+                    align-items: center;
                     a {
                         margin-left: 15px;
                         text-decoration: none;
                         color: var(--text-blue);
+                    }
+                    #company,
+                    #twitter,
+                    #website {
                         &:hover {
                             text-decoration: underline;
+                        }
+                    }
+                    svg {
+                        path {
+                            fill: var(--dark-light);
                         }
                     }
                 }

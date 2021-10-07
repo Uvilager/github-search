@@ -238,11 +238,12 @@ body main .form #submit:hover {
 }
 
 body main .form input {
+  color: var(--dark-light);
   cursor: pointer;
   outline: none;
   padding-left: 45px;
   height: 100%;
-  width: 327px;
+  width: 100%;
   border-radius: 15px;
   background-color: var(--secondary-background);
   border: none;
@@ -252,14 +253,7 @@ body main .form input {
 @media (min-width: 600px) {
   body main .form input {
     padding-left: 80px;
-    width: 450px;
     font-size: 18px;
-  }
-}
-
-@media (min-width: 800px) {
-  body main .form input {
-    width: 590px;
   }
 }
 
@@ -361,7 +355,7 @@ body main .card .profile {
 body main .card .profile img {
   height: 70px;
   width: 70px;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 @media (min-width: 600px) {
@@ -544,10 +538,9 @@ body main .card .socials section {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 15px;
-}
-
-body main .card .socials section img {
-  width: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body main .card .socials section a {
@@ -556,7 +549,13 @@ body main .card .socials section a {
   color: var(--text-blue);
 }
 
-body main .card .socials section a:hover {
+body main .card .socials section #company:hover,
+body main .card .socials section #twitter:hover,
+body main .card .socials section #website:hover {
   text-decoration: underline;
+}
+
+body main .card .socials section svg path {
+  fill: var(--dark-light);
 }
 /*# sourceMappingURL=styles.css.map */
