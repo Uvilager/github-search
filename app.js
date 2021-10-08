@@ -18,8 +18,12 @@ const website = document.getElementById('website');
 const sun = document.querySelector('.sun');
 const moon = document.querySelector('.moon');
 const mode = document.querySelector('.mode');
-
+// onClick
 document.getElementById('submit').addEventListener('click', getUsers);
+document.querySelector('.form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    getUsers();
+});
 
 // Fetch
 function getUsers() {
