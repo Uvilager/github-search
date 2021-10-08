@@ -217,7 +217,7 @@ body main .form #error {
   font-size: 13px;
   word-spacing: 1px;
   right: 120px;
-  top: 24px;
+  top: 21.5px;
 }
 
 @media (min-width: 600px) {
@@ -575,13 +575,23 @@ body main .card .socials section a {
   color: var(--text-blue);
 }
 
-body main .card .socials section #company:hover,
-body main .card .socials section #twitter:hover,
-body main .card .socials section #website:hover {
+body main .card .socials section #location {
+  margin-left: 21.25px;
+}
+
+body main .card .socials section .underline:hover {
   text-decoration: underline;
 }
 
 body main .card .socials section svg path {
   fill: var(--dark-light);
+}
+
+body main .card .socials section .notAvailable {
+  opacity: 0.5;
+}
+
+body main .card .socials section .notAvailable:hover {
+  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -156,7 +156,7 @@ body {
                 font-size: 13px;
                 word-spacing: 1px;
                 right: 120px;
-                top: 24px;
+                top: 21.5px;
                 @media (min-width: 600px) {
                     font-size: 18px;
                     display: inline-block;
@@ -371,9 +371,10 @@ body {
                         text-decoration: none;
                         color: var(--text-blue);
                     }
-                    #company,
-                    #twitter,
-                    #website {
+                    #location {
+                        margin-left: 21.25px;
+                    }
+                    .underline {
                         &:hover {
                             text-decoration: underline;
                         }
@@ -381,6 +382,12 @@ body {
                     svg {
                         path {
                             fill: var(--dark-light);
+                        }
+                    }
+                    .notAvailable {
+                        opacity: 0.5;
+                        &:hover {
+                            text-decoration: none;
                         }
                     }
                 }

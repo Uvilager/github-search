@@ -11,9 +11,14 @@ const followers = document.getElementById('followers');
 const following = document.getElementById('following');
 // Socials
 const userLocation = document.getElementById('location');
+const userLocationSvg = document.getElementById('locationSvg');
 const company = document.getElementById('company');
+const companySvg = document.getElementById('companySvg');
 const twitter = document.getElementById('twitter');
+const twitterSvg = document.getElementById('twitterSvg');
 const website = document.getElementById('website');
+const websiteSvg = document.getElementById('websiteSvg');
+
 // Error
 const error = document.getElementById('error');
 // dark mode/ light mode
@@ -128,26 +133,42 @@ function showData(response) {
     // Socials
     if (response.data.location === null) {
         userLocation.innerText = 'Not available';
+        userLocation.classList.add('notAvailable');
+        userLocationSvg.classList.add('notAvailable');
     } else {
         userLocation.innerText = `${response.data.location}`;
+        userLocation.classList.remove('notAvailable');
+        userLocationSvg.classList.remove('notAvailable');
     }
 
     if (response.data.company === null) {
         company.innerText = 'Not available';
+        company.classList.add('notAvailable');
+        companySvg.classList.add('notAvailable');
     } else {
         company.innerText = `${response.data.company}`;
+        company.classList.remove('notAvailable');
+        companySvg.classList.remove('notAvailable');
     }
 
     if (response.data.twitter_username === null) {
         twitter.innerText = 'Not available';
+        twitter.classList.add('notAvailable');
+        twitterSvg.classList.add('notAvailable');
     } else {
         twitter.innerText = `${response.data.twitter_username}`;
+        twitter.classList.remove('notAvailable');
+        twitterSvg.classList.remove('notAvailable');
     }
 
-    if (response.data.blog === null) {
+    if (response.data.blog === '') {
         website.innerText = 'Not available';
+        website.classList.add('notAvailable');
+        websiteSvg.classList.add('notAvailable');
     } else {
         website.innerText = `${response.data.blog}`;
+        website.classList.remove('notAvailable');
+        websiteSvg.classList.remove('notAvailable');
     }
 }
 
