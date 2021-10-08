@@ -14,6 +14,7 @@
   --passive-blue: #0079ff;
   --active-blue: #60abff;
   --text-blue: white;
+  --error-red: #f74646;
 }
 
 .light-theme {
@@ -206,6 +207,31 @@ body main .form {
   body main .form {
     height: 69px;
     margin-bottom: 24px;
+  }
+}
+
+body main .form #error {
+  position: absolute;
+  display: none;
+  color: var(--error-red);
+  font-size: 13px;
+  word-spacing: 1px;
+  right: 120px;
+  top: 24px;
+}
+
+@media (min-width: 600px) {
+  body main .form #error {
+    font-size: 18px;
+    display: inline-block;
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 800px) {
+  body main .form #error {
+    right: 140px;
+    font-size: 18px;
   }
 }
 

@@ -14,12 +14,13 @@ const userLocation = document.getElementById('location');
 const company = document.getElementById('company');
 const twitter = document.getElementById('twitter');
 const website = document.getElementById('website');
+// Error
+const error = document.getElementById('error');
 // dark mode/ light mode
 const sun = document.querySelector('.sun');
 const moon = document.querySelector('.moon');
 const mode = document.querySelector('.mode');
 // onClick
-document.getElementById('submit').addEventListener('click', getUsers);
 document.querySelector('.form').addEventListener('submit', (e) => {
     e.preventDefault();
     getUsers();
@@ -38,10 +39,32 @@ function getUsers() {
         url: gitUrl,
     })
         .then((response) => {
-            showData(response);
-            console.log(response);
+            if (response.data.message === 'Not Found') {
+                console.log('Not found');
+            } else {
+                showData(response);
+                console.log(response);
+            }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+            if (error.response) {
+                console.log(error.response.data);
+                if (error.response.status === 404) {
+                    userNotFound();
+                    console.log('Not Found');
+                } else {
+                    console.log(error.response.status);
+                }
+                console.log(error.response.headers);
+            } else if (error.request) {
+                console.log(error.request);
+            } else {
+                console.log('Error', error.message);
+            }
+        });
+    function userNotFound() {
+        error.style.visibility = 'visible';
+    }
 }
 
 // On load
